@@ -1,4 +1,3 @@
-
 == HTTP/2 Push Demo
 
 === Instructions
