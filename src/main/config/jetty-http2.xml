@@ -9,6 +9,10 @@
         <Set name="trustStorePath">src/main/resources/truststore.jks</Set>
         <Set name="trustStorePassword">storepwd</Set>
         <Set name="protocol">TLSv1.2</Set>
+        <Set name="CipherComparator">
+            <Get class="org.eclipse.jetty.http2.HTTP2Cipher" name="COMPARATOR"/>
+        </Set>
+        <Set name="useCipherSuitesOrder">true</Set>
     </New>
 
     <New id="httpConfig" class="org.eclipse.jetty.server.HttpConfiguration"/>
@@ -71,7 +75,7 @@
                         </Item>
                         <Item>
                             <New class="org.eclipse.jetty.alpn.server.ALPNServerConnectionFactory">
-                                <Arg>h2-17,h2-16,h2-15,h2-14</Arg>
+                                <Arg>h2,h2-17,h2-16,h2-15,h2-14</Arg>
                             </New>
                         </Item>
                         <Item>
