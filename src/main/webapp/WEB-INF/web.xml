@@ -4,6 +4,11 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
+    <context-param>
+        <param-name>org.eclipse.jetty.server.context.ManagedAttributes</param-name>
+        <param-value>push</param-value>
+    </context-param>
+
     <servlet>
         <servlet-name>slow</servlet-name>
         <servlet-class>org.eclipse.jetty.spdy.SlowImageServlet</servlet-class>

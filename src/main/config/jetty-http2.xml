@@ -3,6 +3,16 @@
 
 <Configure id="Server" class="org.eclipse.jetty.server.Server">
 
+    <Call name="addBean">
+        <Arg>
+            <New class="org.eclipse.jetty.jmx.MBeanContainer">
+                <Arg>
+                    <Call class="java.lang.management.ManagementFactory" name="getPlatformMBeanServer" />
+                </Arg>
+            </New>
+        </Arg>
+    </Call>
+
     <New id="sslContextFactory" class="org.eclipse.jetty.util.ssl.SslContextFactory">
         <Set name="keyStorePath">src/main/resources/keystore.jks</Set>
         <Set name="keyStorePassword">storepwd</Set>
