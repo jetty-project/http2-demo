@@ -12,9 +12,9 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jetty-version>9.3.7.v20160115</jetty-version>
-        <alpn-version>8.1.7.v20160121</alpn-version>
-        <slf4j-version>1.7.12</slf4j-version>
+        <jetty-version>9.4.5.v20170502</jetty-version>
+        <alpn-version>8.1.11.v20170118</alpn-version>
+        <slf4j-version>1.7.25</slf4j-version>
     </properties>
 
     <build>
