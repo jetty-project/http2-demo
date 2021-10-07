@@ -12,9 +12,9 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jetty-version>9.4.5.v20170502</jetty-version>
-        <alpn-version>8.1.11.v20170118</alpn-version>
-        <slf4j-version>1.7.25</slf4j-version>
+        <jetty.version>9.4.5.v20170502</jetty.version>
+        <alpn.version>8.1.11.v20170118</alpn.version>
+        <slf4j.version>1.7.25</slf4j.version>
     </properties>
 
     <build>
@@ -41,13 +41,13 @@
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>${jetty-version}</version>
+                <version>${jetty.version}</version>
                 <configuration>
                     <stopPort>8888</stopPort>
                     <stopKey>quit</stopKey>
                     <jvmArgs>
-                        -Dlog4j.configuration=file://${basedir}/src/main/resources/log4j.properties
-                        -Xbootclasspath/p:${settings.localRepository}/org/mortbay/jetty/alpn/alpn-boot/${alpn-version}/alpn-boot-${alpn-version}.jar
+                      -Dlog4j.configuration=file://${basedir}/src/main/resources/log4j.properties
+                      -Xbootclasspath/p:${settings.localRepository}/org/mortbay/jetty/alpn/alpn-boot/${alpn.version}/alpn-boot-${alpn.version}.jar
                     </jvmArgs>
                     <jettyXml>${basedir}/src/main/config/jetty-http2.xml</jettyXml>
                     <webApp>
@@ -58,22 +58,22 @@
                     <dependency>
                         <groupId>org.eclipse.jetty</groupId>
                         <artifactId>jetty-servlets</artifactId>
-                        <version>${jetty-version}</version>
+                        <version>${jetty.version}</version>
                     </dependency>
                     <dependency>
                         <groupId>org.eclipse.jetty</groupId>
                         <artifactId>jetty-alpn-server</artifactId>
-                        <version>${jetty-version}</version>
+                        <version>${jetty.version}</version>
                     </dependency>
                     <dependency>
                         <groupId>org.eclipse.jetty.http2</groupId>
                         <artifactId>http2-server</artifactId>
-                        <version>${jetty-version}</version>
+                        <version>${jetty.version}</version>
                     </dependency>
                     <dependency>
                         <groupId>org.slf4j</groupId>
                         <artifactId>slf4j-log4j12</artifactId>
-                        <version>${slf4j-version}</version>
+                        <version>${slf4j.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -90,7 +90,7 @@
         <dependency>
             <groupId>org.mortbay.jetty.alpn</groupId>
             <artifactId>alpn-boot</artifactId>
-            <version>${alpn-version}</version>
+            <version>${alpn.version}</version>
             <scope>runtime</scope>
         </dependency>
     </dependencies>
