@@ -12,12 +12,11 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>8</maven.compiler.source>
-    <maven.compiler.target>8</maven.compiler.target>
-    <jetty.version>9.4.41.v20210516</jetty.version>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+    <jetty.version>10.0.6</jetty.version>
     <alpn.version>8.1.13.v20181017</alpn.version>
-    <slf4j.version>1.7.32</slf4j.version>
-    <javax.servlet-api.version>3.1.0</javax.servlet-api.version>
+    <jakarta.servlet-api.version>4.0.4</jakarta.servlet-api.version>
   </properties>
 
   <build>
@@ -53,7 +52,9 @@
             -Dlog4j.configuration=file://${basedir}/src/main/resources/log4j.properties
             -Xbootclasspath/p:${settings.localRepository}/org/mortbay/jetty/alpn/alpn-boot/${alpn.version}/alpn-boot-${alpn.version}.jar
           </jvmArgs>
-          <jettyXml>${basedir}/src/main/config/jetty-http2.xml</jettyXml>
+          <jettyXmls>
+            <jettyXml>${basedir}/src/main/config/jetty-http2.xml</jettyXml>
+          </jettyXmls>
           <webApp>
             <contextPath>/</contextPath>
           </webApp>
@@ -75,9 +76,14 @@
             <version>${jetty.version}</version>
           </dependency>
           <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>${slf4j.version}</version>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-slf4j-impl</artifactId>
+            <version>${jetty.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-alpn-java-server</artifactId>
+            <version>${jetty.version}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -86,16 +92,10 @@
 
   <dependencies>
     <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>javax.servlet-api</artifactId>
-      <version>${javax.servlet-api.version}</version>
+      <groupId>jakarta.servlet</groupId>
+      <artifactId>jakarta.servlet-api</artifactId>
+      <version>${jakarta.servlet-api.version}</version>
       <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.mortbay.jetty.alpn</groupId>
-      <artifactId>alpn-boot</artifactId>
-      <version>${alpn.version}</version>
-      <scope>runtime</scope>
     </dependency>
   </dependencies>
 

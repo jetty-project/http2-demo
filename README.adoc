@@ -13,7 +13,7 @@ the loopback interface (localhost) makes _any_ protocol appear fast.
 ----
 $ mvn clean install
 $ ./simulate-roundtrip.sh
-$ mvn jetty:run-forked
+$ mvn jetty:run
 ----
 
 === JDK Dependency
