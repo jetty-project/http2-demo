@@ -15,7 +15,7 @@
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
 
-    <jetty.version>10.0.6</jetty.version>
+    <jetty.version>10.0.7</jetty.version>
     <alpn.version>8.1.13.v20181017</alpn.version>
     <jakarta.servlet-api.version>4.0.4</jakarta.servlet-api.version>
 
