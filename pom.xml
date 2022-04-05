@@ -19,7 +19,7 @@
     <jakarta.servlet-api.version>5.0.0</jakarta.servlet-api.version>
 
     <maven.assembly.plugin.version>3.3.0</maven.assembly.plugin.version>
-    <maven.clean.plugin.version>3.1.0</maven.clean.plugin.version>
+    <maven.clean.plugin.version>3.2.0</maven.clean.plugin.version>
     <maven.compiler.plugin.version>3.10.1</maven.compiler.plugin.version>
     <maven.dependency.plugin.version>3.3.0</maven.dependency.plugin.version>
     <maven.deploy.plugin.version>3.0.0-M2</maven.deploy.plugin.version>
