@@ -30,7 +30,7 @@
     <maven.surefire.plugin.version>3.0.0-M7</maven.surefire.plugin.version>
     <maven.war.plugin.version>3.3.2</maven.war.plugin.version>
 
-    <jetty.version>10.0.11</jetty.version>
+    <jetty.version>10.0.12</jetty.version>
     <alpn.version>8.1.13.v20181017</alpn.version>
     <jakarta.servlet-api.version>4.0.4</jakarta.servlet-api.version>
   </properties>
